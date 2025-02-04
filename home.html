@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern EPOS System</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="notification-container"></div>
+    <div class="container">
+        <div class="left-panel">
+            <div class="category-row">
+                <button class="category-btn active">Food</button>
+                <button class="category-btn">Drinks</button>
+                <button class="category-btn">Snacks</button>
+                <button class="category-btn">Hot Drinks</button>
+            </div>
+
+            <div class="items-grid">
+                <div class="item-column"></div>
+                <div class="item-column"></div>
+                <div class="item-column"></div>
+                <div class="item-column"></div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="header-actions">
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+            <div class="output-display">
+                <div class="order-items">
+                    <!-- Order items will be displayed here -->
+                </div>
+                <div class="order-total">Total: £0.00</div>
+            </div>
+            <div class="quantity-controls">
+                <button class="control-btn">-</button>
+                <input type="number" class="quantity-display" value="1" min="1">
+                <button class="control-btn">+</button>
+            </div>
+            <button class="action-btn" id="discountBtn" onclick="toggleDiscount()">
+                <i class="fas fa-tag"></i> Discount
+            </button>
+            <button class="action-btn" id="blueLightBtn" onclick="toggleBlueLight()">
+                <i class="fas fa-user-nurse"></i> Blue Light
+            </button>
+            <button class="action-btn" onclick="printAndPay()">
+                <i class="fas fa-print"></i> Print & Pay
+            </button>
+        </div>
+    </div>
+    <script src="menuItems.js"></script>
+    <script src="home.js"></script>
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <h2>Customize Your Order</h2>
+            <div class="modal-body">
+                <div class="size-section">
+                    <h3>Select Size</h3>
+                    <div class="size-options"></div>
+                </div>
+                <div class="customization-section">
+                    <h3>Add Customizations</h3>
+                    <div class="ingredients-section">
+                        <h4>Ingredients</h4>
+                        <div class="ingredients-list">
+                            <!-- Ingredients will be dynamically added here -->
+                        </div>
+                    </div>
+                    <div class="customization-options">
+                        <!-- Customization categories will be dynamically added here -->
+                    </div>
+                </div>
+                <div class="selected-customizations-list"></div>
+                <div class="customization-summary">
+                    <h3>Summary</h3>
+                    <div class="summary-list">
+                        <!-- Summary will be updated dynamically -->
+                    </div>
+                    <div class="price-display">£0.00</div>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn cancel" onclick="closeModal(document.getElementById('orderModal'))">Cancel</button>
+                <button class="modal-btn add-to-order" onclick="addToOrderClicked(this)">Add to Order</button>
+                <button class="modal-btn update-order" onclick="updateOrderClicked(this)" style="display: none;">Update Item</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

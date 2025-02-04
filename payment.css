@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    padding: 15px;
+    background-color: #f5f7fa;
+    min-height: 100vh;
+}
+
+.payment-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.payment-box {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.payment-select {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid #edf2f7;
+    background: #f8f9fa;
+    color: #2c3e50;
+    font-size: 1em;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.payment-select:focus {
+    outline: none;
+    border-color: #16546e;
+    box-shadow: 0 0 0 2px rgba(22, 84, 110, 0.1);
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 12px;
+    background: linear-gradient(145deg, #1a6985, #16546e);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.95em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(22, 84, 110, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(22, 84, 110, 0.2);
+}
+
+.payment-output {
+    background: linear-gradient(145deg, #1a6985, #16546e);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    min-height: 200px;
+    margin-top: 20px;
+}
+
+/* Add notification styles from home.css */
+.notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.notification {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    min-width: 300px;
+    transform: translateX(120%);
+    transition: transform 0.3s ease-out;
+    border-left: 4px solid #2196F3;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification.success {
+    border-left-color: #4CAF50;
+}
+
+.notification.error {
+    border-left-color: #f44336;
+}
+
+.notification.info {
+    border-left-color: #2196F3;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.notification-icon {
+    font-size: 20px;
+    color: #666;
+}
+
+.notification.success .notification-icon {
+    color: #4CAF50;
+}
+
+.notification.error .notification-icon {
+    color: #f44336;
+}
+
+.notification.info .notification-icon {
+    color: #2196F3;
+}
+
+.notification-text {
+    flex: 1;
+}
+
+.notification-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.notification-message {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.notification.fade-out {
+    opacity: 0;
+    transform: translateX(120%);
+    transition: all 0.3s ease-out;
+}
+
+.cash-payment-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.cash-input-group {
+    margin-bottom: 15px;
+}
+
+.cash-input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.input-with-symbol {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 2px;
+}
+
+.currency-symbol {
+    padding: 8px 12px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+#cashAmount {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.1em;
+    padding: 8px;
+    outline: none;
+    width: 100%;
+}
+
+#cashAmount::-webkit-inner-spin-button,
+#cashAmount::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#cashAmount::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.change-display {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.change-display p {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+#changeDue {
+    margin-left: 8px;
+    font-weight: 600;
+} 
